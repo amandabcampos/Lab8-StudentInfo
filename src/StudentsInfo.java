@@ -42,17 +42,17 @@ public class StudentsInfo {
 			while (looping) {
 				System.out.println("(enter or \"hometown\" or \"favorite food\"): ");
 				String nextInfo = scnr.nextLine();
-				if (nextInfo.equals("hometown")) {
+				if (nextInfo.equalsIgnoreCase("hometown")) {
 					System.out.println(getName(studentIndex).split(" ")[0] + " is from " + getHometown(studentIndex)
 							+ ". Would" + " you like to know more? (enter \"yes\" or \"no\"): ");
-					if (scnr.nextLine().startsWith("n")) {
+					if (scnr.nextLine().toLowerCase().startsWith("n")) {
 						looping = false;
 					}
-				} else if (nextInfo.equals("favorite food")) {
+				} else if (nextInfo.equalsIgnoreCase("favorite food")) {
 					System.out.println(
 							getName(studentIndex).split(" ")[0] + "'s favorite food is " + getFavoriteFood(studentIndex)
 									+ ". Would" + " you like to know more? (enter \"yes\" or \"no\"): ");
-					if (scnr.nextLine().startsWith("n")) {
+					if (scnr.nextLine().toLowerCase().startsWith("n")) {
 						looping = false;
 					}
 				} else {
@@ -61,7 +61,7 @@ public class StudentsInfo {
 			}
 			
 			System.out.println("Would you like to know about another student?");
-			if (scnr.nextLine().startsWith("n")) {
+			if (scnr.nextLine().toLowerCase().startsWith("n")) {
 				looping = false;
 			} else {
 				looping = true;
